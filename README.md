@@ -60,7 +60,8 @@ cordova build
 cordova run android
 ```
 ![](https://i.imgur.com/76cVYXw.png)
-- 若上述模擬器無法執行可用其他模擬器代替[BlueStacks](http://www.bluestacks.com/download.html?utm_campaign=homepage-dl-button)
+- 若上述模擬器無法執行可用其他模擬器代替[GENYMOTION](https://www.genymotion.com/download/)
+- 或是使用另一個大陸版模擬器[MEmu](http://wmos.info/archives/13858)
 
 ## 8.Android撰寫及編譯打包(補充說明)
 ### 撰寫程式
