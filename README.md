@@ -60,22 +60,24 @@ cordova build
 cordova run android
 ```
 ![](https://i.imgur.com/76cVYXw.png)
-- 若上述模擬器無法執行可用其他模擬器代替[BlueStacks](http://www.bluestacks.com/download.html?utm_campaign=homepage-dl-button)
+- 若上述模擬器無法執行可用其他模擬器代替[GENYMOTION](https://www.genymotion.com/download/)
+- 或是使用另一個大陸版模擬器[MEmu](http://wmos.info/archives/13858)
+
 ## 8.Android撰寫及編譯打包(補充說明)
-- 撰寫程式
-Cordova是個跨平台解決方案，還記得在前面我們用「cordova platform add」指令加入了Android平台嗎？你的App最終可能要執行在Android, iOS, WP8, BlackBerry等平台，既然是跨平台，當然希望「寫一次」程式就可以執行在各個平台上，為了實現這個需求，你可以編輯的資源僅限於「www」資料夾內的檔案。
-    那麼之前在platforms\android\assets\www中看到的檔案呢？若你直接異動它，再透過對應的IDE還是可以產出可執行的App，但無法兼顧其他平台，既然選擇Cordova，最好不要這樣處理。
+### 撰寫程式
+- Cordova是個跨平台解決方案，還記得在前面我們用「cordova platform add」指令加入了Android平台嗎？你的App最終可能要執行在Android, iOS, WP8, BlackBerry等平台，既然是跨平台，當然希望「寫一次」程式就可以執行在各個平台上，為了實現這個需求，你可以編輯的資源僅限於「www」資料夾內的檔案。
+- 那麼之前在platforms\android\assets\www中看到的檔案呢？若你直接異動它，再透過對應的IDE還是可以產出可執行的App，但無法兼顧其他平台，既然選擇Cordova，最好不要這樣處理。
     另外有關App的基本資訊，Cordova為了兼顧多平台，統一將設定放在專案根目錄中的config.xml檔案，若欲調整App名稱與版本等資料請編輯該檔。
 
-- 編譯打包
-在完成程式的新增與編輯之後(記得，僅存取\www內的資源)，於cmder執行以下指令即可，執行前請確認有完成「開發前置準備」裡面提到的環境變數設定。
+### 編譯打包
+- 在完成程式的新增與編輯之後(記得，僅存取\www內的資源)，於cmder執行以下指令即可，執行前請確認有完成「開發前置準備」裡面提到的環境變數設定。
 ```htmlmixed=
-cordova build
+   cordova build
 ```
-build指令會自動把\www內的東西copy至各平台的\assets\www，並且依各平台不同特性加入與修正必要檔案，為確保整個流程正確，這部分請不要手動完成。
+- build指令會自動把\www內的東西copy至各平台的\assets\www，並且依各平台不同特性加入與修正必要檔案，為確保整個流程正確，這部分請不要手動完成。
      但是！若你不想要使用這種命令方式來打包成apk檔案，可以借用其他IDE來完成，若你有這個打算，請不要直接執行build，而改用以下指令(不同平台請自行抽換參數)。
 ```htmlmixed=
 cordova prepare android
 ```
-prepare會把相關檔案copy至正確的地方，但不進行編譯與打包之動作。實際上執行前面說的build，它也是自動幫你在背後執行prepare與compile兩個指令。
+- prepare會把相關檔案copy至正確的地方，但不進行編譯與打包之動作。實際上執行前面說的build，它也是自動幫你在背後執行prepare與compile兩個指令。
 ## 9.結束
